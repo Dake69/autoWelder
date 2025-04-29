@@ -1,0 +1,22 @@
+# Virtual environment
+.venv/
+env/
+venv/
+
+
+# Python cache files
+__pycache__/
+
+
+# Configuration files
+config.py
+config.json
+config.yaml
+config.yml
+config.ini
+config.toml
+config.env
+config.envrc
+config.env.example
+config.env.example.json
+
