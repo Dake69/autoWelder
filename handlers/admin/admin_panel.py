@@ -24,3 +24,4 @@ async def admin_panel(message: Message):
         await message.answer(
             "❌ Ви не маєте доступу до адмін-панелі."
         )
+
