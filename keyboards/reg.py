@@ -27,3 +27,7 @@ def create_regions_inline_keyboard(page: int = 1, per_page: int = 8):
         keyboard.inline_keyboard.append(navigation_buttons)
 
     return keyboard
+
+keyboard_to_main = InlineKeyboardMarkup(inline_keyboard=[
+    [InlineKeyboardButton(text="🏠 На головну", callback_data="start")]
+])

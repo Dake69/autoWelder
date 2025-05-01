@@ -9,7 +9,7 @@ from aiogram.fsm.context import FSMContext
 
 from FSM.all import Registration
 
-from keyboards.reg import create_regions_inline_keyboard
+from keyboards.reg import create_regions_inline_keyboard, keyboard_to_main
 
 from database.users import save_user, get_user
 
@@ -26,7 +26,8 @@ async def send_welcome(message: Message, state: FSMContext):
             "Ви вже зареєстровані в нашому інтернет-магазині автозапчастин. 🛠️\n"
             f"📞 Ваш номер телефону: {user['phone_number']}\n"
             f"📍 Ваша область проживання: {user['region']}\n\n"
-            "🛒 Ви можете переглядати наш каталог автозапчастин!"
+            "🛒 Ви можете переглядати наш каталог автозапчастин!",
+            reply_markup=keyboard_to_main
         )
         return
 
@@ -108,7 +109,8 @@ async def handle_region_pagination(callback: CallbackQuery, state: FSMContext):
             f"🎉 Дякуємо за реєстрацію, {user_data['full_name']}! 🛠️\n\n"
             f"📞 Ваш номер телефону: {user_data['phone_number']}\n"
             f"📍 Ваша область проживання: {user_data['region']}\n\n"
-            "🛒 Тепер ви можете переглядати наш каталог автозапчастин!"
+            "🛒 Тепер ви можете переглядати наш каталог автозапчастин!",
+            reply_markup=keyboard_to_main
         )
         await state.clear()
         await callback.answer()
